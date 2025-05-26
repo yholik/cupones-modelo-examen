@@ -42,13 +42,15 @@ public class Cupon {
 		this.cantUsos = usos;
 	}
 
+	public void setTotalDescontado(double importe) {
+		this.totalDescontado = importe;
+	}
+	
 	public double usarCupon(double importe) {
 		double precioConDescuento = importe - (this.getDescuento() / 100 * importe);
 		this.cantUsos = this.cantUsos - 1;
 		return precioConDescuento;
 	}
 	
-	public void setTotalDescontado(double importe) {
-		this.totalDescontado = importe;
-	}
+	
 }

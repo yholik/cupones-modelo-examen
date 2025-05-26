@@ -11,7 +11,7 @@ public class Main {
 		Mostrador mostrador = new Mostrador();
 		Supermercado cajaSupermercado = new Supermercado(); 
 
-		Cupon cuponcitos[] = new Cupon[2];
+		Cupon cuponcitos[] = new Cupon[1];
 		
 		mostrador.mostraBienvenida();
 		mostrador.configurarCupones(cuponcitos);

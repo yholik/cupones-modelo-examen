@@ -127,24 +127,20 @@ public class Mostrador {
 			cuponActual = cuponcitos[indiceIngresado];
 			int usos = cuponActual.getCantUsosRestantes();
 			if(usos >= 1) {
+				System.out.println("Que importe es?");
+				importe = sc.nextInt();
+				precioFinal = cuponActual.usarCupon(importe);
 				
+				descontado = importe - precioFinal;
+				cuponActual.setTotalDescontado(cuponActual.getTotalDescontado() + descontado);
+				
+				cajaSupermercado.acumularVTa(precioFinal);
+				cajaSupermercado.acumularDto(descontado);
+				
+				System.out.println("Precio Final: " + precioFinal);
 			}else {
 				System.out.println("No tiene usos disponibles este cupon.");
 			}
-			
-			
-			System.out.println("Que importe es?");
-			importe = sc.nextInt();
-			precioFinal = cuponActual.usarCupon(importe);
-			
-			descontado = importe - precioFinal;
-			descontado += cuponActual.getTotalDescontado();
-			cuponActual.setTotalDescontado(descontado);
-			
-			cajaSupermercado.acumularVTa(precioFinal);
-			cajaSupermercado.acumularDto(descontado);
-			
-			System.out.println("Precio Final: " + precioFinal);
 			break;
 		case 6: // MOSTRAR MENSAJE DE SALIDA
 			System.out.println("Gracias por usar el programa");
